@@ -46,7 +46,8 @@
         android:id="@+id/locationEditText"
         android:layout_width="match_parent"
         android:layout_height="86dp"
-        android:hint="Location" />
+        android:hint="Location"
+        android:inputType="text"/>
 
     <Button
         android:id="@+id/getCurrentLocationButton"

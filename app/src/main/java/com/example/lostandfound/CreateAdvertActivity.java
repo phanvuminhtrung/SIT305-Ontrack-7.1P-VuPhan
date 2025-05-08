@@ -72,20 +72,21 @@ public class CreateAdvertActivity extends AppCompatActivity {
         getCurrentLocationButton = findViewById(R.id.getCurrentLocationButton);
         btnBack = findViewById(R.id.btnBackToMenu);
 
-        Places.initialize(getApplicationContext(), "AIzaSyCpAX_odlXTiTVW053-e92V6i-YMUSr418");
-
-        locationEditText.setFocusable(false);
-        locationEditText.setClickable(true);
-        locationEditText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS);
-
-                Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
-                        .build(CreateAdvertActivity.this);
-                startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
-            }
-        });
+// Commented out Google Maps autocomplete – not required for assignment stage
+//        Places.initialize(getApplicationContext(), "AIzaSyCpAX_odlXTiTVW053-e92V6i-YMUSr418");
+//
+//        locationEditText.setFocusable(false);
+//        locationEditText.setClickable(true);
+//        locationEditText.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS);
+//
+//                Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
+//                        .build(CreateAdvertActivity.this);
+//                startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+//            }
+//        });
 
         //Retrieve current location button
         getCurrentLocationButton.setOnClickListener(new View.OnClickListener() {
