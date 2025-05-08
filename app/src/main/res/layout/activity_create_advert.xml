@@ -55,12 +55,23 @@
         android:layout_below="@id/locationEditText"
         android:layout_marginTop="8dp"
         android:layout_alignParentEnd="true"
-        android:text="Get Current Location" />
+        android:text="Get Current Location"
+        android:visibility="gone"
+        />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:text="Save" />
+
+    <Button
+        android:id="@+id/btnBackToMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Menu"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal" />
+
 
 </LinearLayout>

@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
 
 public class ShowItemsActivity extends AppCompatActivity {
 
     private AdvertDbHelper dbHelper;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,14 @@ public class ShowItemsActivity extends AppCompatActivity {
         });
 
         cursor.close();
+
+        btnBack = findViewById(R.id.btnBackToMenu);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // This will return to the previous activity (main menu)
+            }
+        });
     }
 
     @Override

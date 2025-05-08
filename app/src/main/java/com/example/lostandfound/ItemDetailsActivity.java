@@ -79,6 +79,8 @@ public class ItemDetailsActivity extends AppCompatActivity {
         }
 
         cursor.close();
+
+        //Remove button
         Button removeButton = findViewById(R.id.button_remove_item);
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +98,14 @@ public class ItemDetailsActivity extends AppCompatActivity {
             }
         });
 
+        //Back button
+        Button btnBack = findViewById(R.id.btnBackToMenu);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Closes current screen and returns to previous one
+            }
+        });
     }
 
     @Override

@@ -52,6 +52,7 @@ public class CreateAdvertActivity extends AppCompatActivity {
     private EditText locationEditText;
     private Button saveButton;
     private Button getCurrentLocationButton;
+    private Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,7 @@ public class CreateAdvertActivity extends AppCompatActivity {
         locationEditText = findViewById(R.id.locationEditText);
         saveButton = findViewById(R.id.saveButton);
         getCurrentLocationButton = findViewById(R.id.getCurrentLocationButton);
+        btnBack = findViewById(R.id.btnBackToMenu);
 
         Places.initialize(getApplicationContext(), "AIzaSyCpAX_odlXTiTVW053-e92V6i-YMUSr418");
 
@@ -85,6 +87,7 @@ public class CreateAdvertActivity extends AppCompatActivity {
             }
         });
 
+        //Retrieve current location button
         getCurrentLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +99,7 @@ public class CreateAdvertActivity extends AppCompatActivity {
             }
         });
 
+        //Save button
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,6 +141,14 @@ public class CreateAdvertActivity extends AppCompatActivity {
                 Toast.makeText(CreateAdvertActivity.this, "Advert created successfully", Toast.LENGTH_SHORT).show();
 
                 finish();
+            }
+        });
+
+        //Back button
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Closes current screen and returns to previous one
             }
         });
     }
@@ -216,4 +228,6 @@ public class CreateAdvertActivity extends AppCompatActivity {
         dbHelper.close();
         super.onDestroy();
     }
+
+
 }
